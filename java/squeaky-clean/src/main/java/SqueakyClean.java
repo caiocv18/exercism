@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 class SqueakyClean {
     static String clean(String identifier) {
         if(identifier.contains(" ")){
@@ -23,7 +27,17 @@ class SqueakyClean {
     }
 
     static String convert_kebab_case_to_camelCase(String word) {
-        // TODO: 23/06/2023
+        char[] characters = word.toCharArray();
+        word="";
+        for (char letter : characters){
+            if(Character.isLetter(letter)){
+                word = word.concat(String.valueOf(letter));
+            }
+        }
         return word;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(SqueakyClean.convert_kebab_case_to_camelCase("caio_vinicius\n"));
     }
 }
